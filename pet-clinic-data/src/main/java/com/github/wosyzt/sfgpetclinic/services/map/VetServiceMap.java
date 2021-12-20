@@ -1,11 +1,11 @@
 package com.github.wosyzt.sfgpetclinic.services.map;
 
 import com.github.wosyzt.sfgpetclinic.model.Vet;
-import com.github.wosyzt.sfgpetclinic.services.CrudService;
+import com.github.wosyzt.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Vet findById(Long id) {
