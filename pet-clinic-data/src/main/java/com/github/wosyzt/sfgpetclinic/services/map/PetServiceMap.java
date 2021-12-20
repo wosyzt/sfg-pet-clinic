@@ -1,11 +1,13 @@
 package com.github.wosyzt.sfgpetclinic.services.map;
 
 import com.github.wosyzt.sfgpetclinic.model.Pet;
-import com.github.wosyzt.sfgpetclinic.services.CrudService;
+import com.github.wosyzt.sfgpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Pet findById(Long id) {
