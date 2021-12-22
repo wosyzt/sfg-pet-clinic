@@ -10,12 +10,12 @@ import java.util.Set;
 public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
-    void delete(PetType object) {
+    public void delete(PetType object) {
         super.delete(object);
     }
 
     @Override
-    void deleteById(Long aLong) {
+    public void deleteById(Long aLong) {
         super.deleteById(aLong);
     }
 
