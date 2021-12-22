@@ -8,14 +8,6 @@ public class Owner extends Person{
     private String telephone;
     private Set<Pet> pets;
 
-    public Set<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(Set<Pet> pets) {
-        this.pets = pets;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -38,5 +30,13 @@ public class Owner extends Person{
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public Set<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
