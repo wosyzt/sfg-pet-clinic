@@ -1,12 +1,24 @@
 package com.github.wosyzt.sfgpetclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "vets")
 public class Vet extends Person{
+    @Builder
+    public Vet(Long id, String firstName, String lastName, Set<Specialty> specialties) {
+        super(id, firstName, lastName);
+        this.specialties = specialties;
+    }
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "vet_specialty",
@@ -14,11 +26,4 @@ public class Vet extends Person{
             inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialties = new HashSet<>();
 
-    public Set<Specialty> getSpecialities() {
-        return specialties;
-    }
-
-    public void setSpecialities(Set<Specialty> specialities) {
-        this.specialties = specialities;
-    }
 }
