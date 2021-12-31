@@ -10,6 +10,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,6 +37,7 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void findById() {
+        when(ownerRepository.findById(anyLong())).thenReturn(Optional.of(owner));
         Owner own1 = ownerSDJpaService.findById(owner.getId());
         assertNotNull(own1);
         assertEquals(owner.getId(), own1.getId());
@@ -51,6 +53,7 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void save() {
+        when(ownerRepository.save(any())).thenReturn(owner);
         Owner savedOwner = ownerSDJpaService.save(owner);
         verify(ownerRepository).save(any());
         assertNotNull(savedOwner);
