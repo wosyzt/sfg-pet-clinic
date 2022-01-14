@@ -35,4 +35,9 @@ public class PetTypeMapService extends AbstractMapService<PetType, Long> impleme
     public Set<PetType> findAll() {
         return super.findAll();
     }
+
+    @Override
+    public PetType findPetTypeByName(String name) {
+        return null;
+    }
 }
