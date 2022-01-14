@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'home')}">
 <head>
     <meta charset="UTF-8">
-    <title>pet clinic index</title>
+    <title th:text="#{index.title}">pet clinic index</title>
 </head>
 <body>
-    <h1 th:text="#{welcome}">Index page</h1>
+    <h1 th:text="#{welcome}">Index pagse</h1>
     <div class="row">
         <div class="col-md-12">
             <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
